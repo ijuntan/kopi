@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/kopi/static/css/main.3b209893.chunk.css",
+    "main.js": "/kopi/static/js/main.61c42179.chunk.js",
+    "main.js.map": "/kopi/static/js/main.61c42179.chunk.js.map",
+    "runtime-main.js": "/kopi/static/js/runtime-main.c6c235f0.js",
+    "runtime-main.js.map": "/kopi/static/js/runtime-main.c6c235f0.js.map",
+    "static/js/2.6de036f8.chunk.js": "/kopi/static/js/2.6de036f8.chunk.js",
+    "static/js/2.6de036f8.chunk.js.map": "/kopi/static/js/2.6de036f8.chunk.js.map",
+    "index.html": "/kopi/index.html",
+    "precache-manifest.2481373641957a4e7f26f581239f0310.js": "/kopi/precache-manifest.2481373641957a4e7f26f581239f0310.js",
+    "service-worker.js": "/kopi/service-worker.js",
+    "static/css/main.3b209893.chunk.css.map": "/kopi/static/css/main.3b209893.chunk.css.map",
+    "static/js/2.6de036f8.chunk.js.LICENSE.txt": "/kopi/static/js/2.6de036f8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6c235f0.js",
+    "static/js/2.6de036f8.chunk.js",
+    "static/css/main.3b209893.chunk.css",
+    "static/js/main.61c42179.chunk.js"
+  ]
+}
