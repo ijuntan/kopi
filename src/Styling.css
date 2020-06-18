@@ -1,0 +1,82 @@
+.buttonHeader div{
+    color:brown;
+    font-size: 2.2vh;
+}
+
+.buttonHeader :hover{
+    color:red;
+    background-color: transparent;
+    animation-name: button;
+    animation-duration: 500ms;
+}
+
+@keyframes button {
+    0% {color: brown}
+    100% {color: red}
+}
+
+.background{
+    height: 85vh;
+    width: 100%;
+    background-image: url(/images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.7;
+}
+
+.iconSize{
+    height: auto;
+    max-width: 4vh;
+    margin:2vh 2vh
+}
+
+.produk{
+    min-height:35vh;
+    font-weight: bold;
+    font-size: 12vh;
+    margin-bottom: 20vh
+}
+
+.isiProduk{
+    padding-bottom: 20vh
+}
+
+.imgSize{
+    height: auto;
+    width: 20vh;
+    display: block;
+}
+
+.namaProduk{
+    font-weight: bolder;
+    font-size: 4vh;
+    border-bottom: 0.5vh double #593C1F;
+}
+
+.hargaProduk250{
+    font-size: 2vh;
+    border-bottom: 0.2vh solid black;
+    padding: 1vh  0
+}
+
+.contact{
+    min-height:90vh;
+    background-color: #593C1F;
+}
+
+.contact div{
+    font-size: 8vh;
+    color:whitesmoke;
+    margin: 12vh 0
+}
+
+.marketPlace{
+    min-height:100vh;
+}
+
+.footer{
+    background-color: grey;
+    min-height: 30vh;
+    font-size: 3vh;
+}
