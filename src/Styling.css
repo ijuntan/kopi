@@ -1,63 +1,70 @@
-.buttonHeader div{
-    color:brown;
-    font-size: 2.2vh;
-}
-
-.buttonHeader :hover{
-    color:red;
-    background-color: transparent;
-    animation-name: button;
-    animation-duration: 500ms;
-}
-
-@keyframes button {
-    0% {color: brown}
-    100% {color: red}
+@font-face{
+    font-family: 'Aleo';
+    src: local(Aleo), url(./Fonts/Aleo-Bold.otf) format('opentype')
 }
 
 .background{
-    height: 85vh;
+    min-height: 100vh;
     width: 100%;
-    background-image: url(/images/bg.jpg);
+    background-image: url('./Images/bw.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 0.7;
 }
 
-.iconSize{
+.frontPageImage{
+    padding-top:15vh;
+    height: 90vh;
+    width: auto;
+}
+
+.logoHeader{
+    height: auto;
+    max-width: 12vh
+}
+
+.iconHeader{
     height: auto;
     max-width: 4vh;
     margin:2vh 2vh
 }
 
-.produk{
-    min-height:35vh;
+.product{
     font-weight: bold;
     font-size: 12vh;
-    margin-bottom: 20vh
+    margin-bottom: 10vh;
+    padding-top:17vh;
+    font-family: 'Aleo';
+    color:#7a4a16;
 }
 
-.isiProduk{
-    padding-bottom: 20vh
+.isiProduct{
+    padding: 0 5vw 10vh;
+    color:#7a4a16;
+    font-family: 'Aleo';
 }
 
 .imgSize{
     height: auto;
-    width: 20vh;
-    display: block;
+    width: 35vh;
 }
 
-.namaProduk{
+.namaProduct{
     font-weight: bolder;
-    font-size: 4vh;
+    font-size: 9vh;
     border-bottom: 0.5vh double #593C1F;
 }
 
-.hargaProduk250{
-    font-size: 2vh;
+.descProduct{
+    font-size: 4vh;
+    border-top: 0.5vh double #593C1F;
+}
+
+.hargaProduct{
+    font-size: 3vh;
     border-bottom: 0.2vh solid black;
-    padding: 1vh  0
+    padding: 1vh  0;
+    color:black;
 }
 
 .contact{
@@ -72,11 +79,50 @@
 }
 
 .marketPlace{
-    min-height:100vh;
+    min-height: 110vh;
+    width: 100%;
+    background-image: url('./Images/bb.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.marketPlaceHead{
+    font-weight: bold;
+    font-size: 12vh;
+    margin-bottom: 20vh;
+    padding-top:15vh;
+    font-family: 'Aleo';
+    color:white;
+}
+
+.marketPlacePaper{
+    height: 50vh;
+    margin-top: 8vh;
 }
 
 .footer{
-    background-color: grey;
     min-height: 30vh;
     font-size: 3vh;
+}
+
+.logoFooter{
+    height: auto;
+    max-width: 20vh
+}
+
+.footerText{
+    padding:0 10vw 0 0;
+    color:#7a4a16;
+    font-family: 'Aleo';
+}
+
+.footerText div{
+    font-size:2.5vh
+}
+
+.iconFooter{
+    height: auto;
+    max-width: 4vh;
+    margin:2vh 1vw 0 0
 }
