@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cbea968ace035c0bc0cd3ad90f2070dc",
+    "revision": "28496cc16284c368b98d8f1ba0af847d",
     "url": "/kopi/index.html"
   },
   {
-    "revision": "aa6fa3b314e6293415b6",
-    "url": "/kopi/static/css/main.cc00b150.chunk.css"
+    "revision": "85efc8a140b59c5ca6d3",
+    "url": "/kopi/static/css/main.10806833.chunk.css"
   },
   {
-    "revision": "3601104728b5a6f02bf5",
-    "url": "/kopi/static/js/2.93df637f.chunk.js"
+    "revision": "5cc0afe74defcba6bec2",
+    "url": "/kopi/static/js/2.0cae5d78.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/kopi/static/js/2.93df637f.chunk.js.LICENSE.txt"
+    "url": "/kopi/static/js/2.0cae5d78.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aa6fa3b314e6293415b6",
-    "url": "/kopi/static/js/main.04e47208.chunk.js"
+    "revision": "85efc8a140b59c5ca6d3",
+    "url": "/kopi/static/js/main.0d81e54d.chunk.js"
   },
   {
     "revision": "c1a29750cff87d93fcfa",
@@ -66,6 +66,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "63acb3a8c771d93ab52d5c92b2f148c7",
     "url": "/kopi/static/media/lw.63acb3a8.png"
+  },
+  {
+    "revision": "3f7dc90a1651b35e69718bbf38ed265a",
+    "url": "/kopi/static/media/timesNewRoman.3f7dc90a.ttf"
   },
   {
     "revision": "758e4ba494f7747ed28d82a608f850f6",
