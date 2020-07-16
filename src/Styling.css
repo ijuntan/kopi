@@ -3,6 +3,11 @@
     src: local(Aleo), url(./Fonts/Aleo-Bold.otf) format('opentype')
 }
 
+@font-face{
+    font-family: 'TNR';
+    src: local(TNR), url(./Fonts/timesNewRoman.ttf) format('truetype')
+}
+
 .background{
     min-height: 100vh;
     width: 100%;
@@ -20,13 +25,13 @@
 
 .logoHeader{
     height: auto;
-    max-width: 12vh
+    max-width: 13vh;
 }
 
 .iconHeader{
     height: auto;
-    max-width: 4vh;
-    margin:2vh 2vh
+    max-width: 5vh;
+    margin:3vh 2vh
 }
 
 .product{
@@ -124,5 +129,50 @@
 .iconFooter{
     height: auto;
     max-width: 4vh;
-    margin:2vh 1vw 0 0
+    margin:2vh 1vw 1vh 0
+}
+
+@media only screen and (max-width:1080px){
+    .background{
+        min-height: 15vh;
+    }
+
+    .frontPageImage{
+        margin-top: 5vh;
+        height: 40vh;
+    }
+
+    .product{
+        font-size: 8vh;
+        padding-top: 10vh
+    }
+
+    .imgSize{
+        width: 20vh;
+    }
+    
+    .namaProduct{
+        font-size: 5vh;
+    }
+
+    .descProduct{
+        font-size: 2vh;
+    }
+    
+    .hargaProduct{
+        font-size: 2vh;
+    }
+
+    .marketPlace{
+        height:20vh
+    }
+
+    .marketPlaceHead{
+        font-size: 6vh;
+        padding-top:9vh
+    }
+
+    .footerText div{
+        font-size:2vh
+    }
 }

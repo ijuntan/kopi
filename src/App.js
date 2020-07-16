@@ -1,6 +1,9 @@
-import React,{useRef} from 'react';
-import {AppBar,Toolbar,CssBaseline,Grid,Button,Paper} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React,{useRef,useState} from 'react';
+import {AppBar,Toolbar,CssBaseline,Grid,Button,Paper,Hidden,IconButton,Drawer,Divider,ListItem,ListItemText} from '@material-ui/core';
+import { makeStyles,useTheme } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import FBwhite from './Images/fw.png';
 import FBbrown from './Images/fb.png';
 import Iwhite from './Images/iw.png';
@@ -18,6 +21,7 @@ const useStyles = makeStyles(() => ({
     color:'white',
     fontSize: '2.2vh',
     margin:'0 0.6vw',
+    fontFamily:'TNR',
     "&:hover": {
       backgroundColor: 'transparent',
       "&::after": {
@@ -39,6 +43,9 @@ const useStyles = makeStyles(() => ({
   },
   
   buttonLogo:{
+    left:'45%',
+    top:'-18%',
+    position:'absolute',
     "&:hover": {
       backgroundColor: 'transparent',
     }
@@ -50,21 +57,80 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 const App = (props) => {
   const homeRef = useRef(null);
-  const ProductRef = useRef(null);
+  const productRef = useRef(null);
   const contactRef = useRef(null);
   const marketPlaceRef = useRef(null);
-  const toHome = () => scrollToRef(homeRef);
-  const toProduct = () => scrollToRef(ProductRef);
-  const toContact = () => scrollToRef(contactRef);
+  const [ toggleDrawer, setToggleDrawer ] = useState(false);
+  const toHome = () => scrollToRef(homeRef); 
+  const toProduct = () => scrollToRef(productRef); 
+  const toContact = () => scrollToRef(contactRef); 
   const toMarketPlace = () => scrollToRef(marketPlaceRef);
+  const toHomeDrawer = () => { scrollToRef(homeRef); setToggleDrawer(!toggleDrawer); }
+  const toProductDrawer = () => { scrollToRef(productRef); setToggleDrawer(!toggleDrawer); }
+  const toContactDrawer = () => { scrollToRef(contactRef); setToggleDrawer(!toggleDrawer); }
+  const toMarketPlaceDrawer = () => { scrollToRef(marketPlaceRef); setToggleDrawer(!toggleDrawer); }
   const classes = useStyles();
+  const theme = useTheme();
+
+  const handleToggleDrawer = () => {
+    setToggleDrawer(!toggleDrawer);
+  }
+
   return (
       <div>
-          <CssBaseline/>
-          <AppBar>
-              <Toolbar style={{backgroundColor:'#7a4a16'}}>
+        <CssBaseline/>
+          <AppBar style={{backgroundColor:'#7a4a16'}}>
+            <Hidden mdUp implementation="css">
+              <IconButton
+                color="inherit"
+                onClick={handleToggleDrawer}
+                >
+                  <MenuIcon />
+              </IconButton>
+              
+              <Drawer
+                  className={classes.drawer}
+                  variant="temporary"
+                  anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+                  open={toggleDrawer}
+                  onClose={handleToggleDrawer}
+                  ModalProps={{
+                    keepMounted:true
+                  }}
+                  >
+                  
+                <div>
+                  <IconButton onClick={handleToggleDrawer}>
+                    {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                  </IconButton>
+                </div>
+
+                <Divider/>
+
                 {
                   [
+                    {name:'Home',toRef:toHomeDrawer},
+                    {name:'Product',toRef:toProductDrawer},
+                    {name:'Marketplace',toRef:toMarketPlaceDrawer},
+                    {name:'Contact',toRef:toContactDrawer},
+                  ].map((item)=>(
+                    <ListItem button onClick={item.toRef}>
+                        <ListItemText>
+                          <div>
+                            {item.name}
+                          </div>
+                        </ListItemText>
+                    </ListItem>
+                  ))
+                }
+                
+              </Drawer>
+            </Hidden>
+            <Hidden mdDown implementation="css">
+              <Toolbar>
+                {
+                  [
+                    {name:'Home',toRef:toHome},
                     {name:'Product',toRef:toProduct},
                     {name:'Marketplace',toRef:toMarketPlace},
                     {name:'Contact',toRef:toContact},
@@ -76,33 +142,34 @@ const App = (props) => {
                       </Button>
                   ))
                 }
-                  <Grid container item xs={7} justify='center' style={{color:'black'}} ref={homeRef}>
-                    <Button onClick={toHome} disableRipple className={classes.buttonLogo}>
-                      <img src={LogoWhite} alt='logo' className='logoHeader'/>
-                    </Button>
-                  </Grid>
+                <Grid container item xs={7} justify='center' style={{color:'black'}} ref={homeRef}>
+                  <Button disableRipple className={classes.buttonLogo}>
+                    <img src={LogoWhite} alt='logo' className='logoHeader'/>
+                  </Button>
+                </Grid>
 
-                  <Grid container item xs={3} justify='flex-end'>
-                    {
-                      [
-                        {img:Iwhite},
-                        {img:FBwhite},
-                        {img:Wwhite},
-                      ].map((item,index)=>(
-                        <img src={item.img} alt={index} className='iconHeader'/>
-                      ))
-                    }
-                  </Grid>
+                <Grid container item xs={3} justify='flex-end'>
+                  {
+                    [
+                      {img:Iwhite},
+                      {img:FBwhite},
+                      {img:Wwhite},
+                    ].map((item,index)=>(
+                      <img src={item.img} alt={index} className='iconHeader'/>
+                    ))
+                  }
+                </Grid>
               </Toolbar>
+            </Hidden>
           </AppBar>
 
           <div>
             {/* Front Page */}
-            <Grid className='background' container justify='center' alignItems='center'>
+            <Grid className='background' container justify='center'>
               <img src={bg} alt='randompic' className='frontPageImage'/>
             </Grid>
             
-            <div className='background' ref={ProductRef}>
+            <div className='background' ref={productRef}>
               {/* Product Title */}
               <Grid 
                 className='product' 
@@ -153,10 +220,10 @@ const App = (props) => {
 
             {/* Footer and Contact */}
             <Grid container className='footer' ref={contactRef}>
-              <Grid item xs={6} container justify='center' alignItems='center' >
+              <Grid item lg={6} xs={12} container justify='center' alignItems='center' >
                 <img src={LogoBrown} alt='logoFooter' className='logoFooter'/>
               </Grid>
-              <Grid item xs={6}  container justify='center' alignItems='center'>
+              <Grid item lg={6} xs={12}  container justify='center' alignItems='center'>
                 <div className='footerText'>
                   Hubungi kami
 
